@@ -1,0 +1,16 @@
+<resources>
+    <style name="Theme.ABYATHR" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:navigationBarColor">@color/abyat_primary</item>
+        <item name="android:statusBarColor">@color/abyat_primary</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">@color/abyat_background</item>
+    </style>
+
+    <style name="Theme.ABYATHR.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/abyat_logo_mark</item>
+        <item name="postSplashScreenTheme">@style/Theme.ABYATHR</item>
+    </style>
+</resources>

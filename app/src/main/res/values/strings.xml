@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">أبيات للموظفين</string>
+    <string name="location_permission_needed">يلزم السماح بالموقع لاستخدام خدمات الحضور والبصمة.</string>
+    <string name="no_app_found">لا يوجد تطبيق مناسب لفتح هذا الرابط.</string>
+    <string name="biometric_title">أبيات للموظفين</string>
+    <string name="biometric_subtitle">استخدم بصمة الإصبع أو قفل الجهاز للمتابعة</string>
+    <string name="biometric_cancel">إلغاء</string>
+    <string name="notification_channel_name">إشعارات أبيات</string>
+    <string name="notification_channel_desc">تنبيهات وطلبات نظام الموظفين</string>
+</resources>

@@ -28,9 +28,30 @@ jobs:
       - name: Install Android SDK 35
         run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
 
-      - name: Build installable debug APK
-        run: gradle :app:assembleDebug --stacktrace
+      - name: Build APK and save log
+  id: apkbuild
+  shell: bash
+  run: |
+    set +e
+    gradle :app:assembleDebug --console=plain --stacktrace 2>&1 | tee build.log
+    STATUS=${PIPESTATUS[0]}
+    echo "status=$STATUS" >> "$GITHUB_OUTPUT"
+    exit 0
 
+- name: Show Kotlin compiler error
+  if: steps.apkbuild.outputs.status != '0'
+  shell: bash
+  run: |
+    echo "========== REAL COMPILER ERROR =========="
+    grep -nE '(^e:| error:|Unresolved reference|Type mismatch|Cannot access|Expecting|None of the following)' build.log || tail -n 150 build.log
+    exit 1
+
+- name: Upload APK
+  if: steps.apkbuild.outputs.status == '0'
+  uses: actions/upload-artifact@v4
+  with:
+    name: ABYAT-HR-APK
+    path: app/build/outputs/apk/debug/app-debug.apk
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:

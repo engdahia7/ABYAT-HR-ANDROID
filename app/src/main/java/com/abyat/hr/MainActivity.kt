@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
             javaScriptEnabled = true
             domStorageEnabled = true
             databaseEnabled = true
-            geolocationEnabled = true
+            setGeolocationEnabled(true)
             allowFileAccess = false
             allowContentAccess = true
             setSupportZoom(false)

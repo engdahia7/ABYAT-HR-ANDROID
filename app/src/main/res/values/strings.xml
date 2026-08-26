@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">أبيات للموظفين</string>
+    <string name="app_name">abyat hr</string>
     <string name="location_permission_needed">يلزم السماح بالموقع لاستخدام خدمات الحضور والبصمة.</string>
     <string name="no_app_found">لا يوجد تطبيق مناسب لفتح هذا الرابط.</string>
     <string name="biometric_title">أبيات للموظفين</string>
